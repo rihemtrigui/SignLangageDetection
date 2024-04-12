@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "805622886326",
+    "project_id": "loginregister-6812f",
+    "storage_bucket": "loginregister-6812f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805622886326:android:c449da46e926e8f08c9b17",
+        "android_client_info": {
+          "package_name": "com.example.signyourway"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFxs-XDEPLsJts52-lJheG46H2WY97oa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -58,7 +58,7 @@ public class SignToText extends AppCompatActivity {
     private int imageSize = 150;
     private String lastPredictedLabel = null;
     private long lastPredictionTime = 0;
-    private static final long DEBOUNCE_TIME = 10000;
+    private static final long DEBOUNCE_TIME = 1000000;
     private static final float confidenceThreshold = 0.7f;// Example threshold
     TextToSpeech ttx;
 
@@ -241,6 +241,7 @@ public class SignToText extends AppCompatActivity {
                         }
                         // Add the label to the set of added letters
                         addedLetters.add(lastPredictedLabel);
+
                     }
                 }
             }
