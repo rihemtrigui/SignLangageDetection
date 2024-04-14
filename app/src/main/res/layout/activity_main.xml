@@ -3,7 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#D6E0EF"
+    >
 
     <Button
         android:id="@+id/buttonx1"
@@ -11,7 +13,10 @@
         android:layout_height="wrap_content"
         android:text="Sign To text"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true"
+        android:backgroundTint="#FFF2DC"
+        android:textColor="#001C2F"
+      />
 
     <Button
         android:id="@+id/buttonx2"
@@ -19,23 +24,26 @@
         android:layout_height="wrap_content"
         android:text="Text To sign"
         android:layout_below="@id/buttonx1"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#FFF2DC"
+        android:textColor="#001C2F"
+        />
 
 
     <Button
         android:id="@+id/buttonx3"
-        android:layout_width="wrap_content"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
-        android:text="Let's Learn"
         android:layout_below="@id/buttonx2"
         android:layout_centerHorizontal="true"
-        />
-    <Button
-        android:id="@+id/testing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test"
-        android:layout_below="@id/buttonx3"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#FFF2DC"
+        android:textColor="#001C2F"
+        android:text="Let's Learn" />
+
+
+
+
 
 </RelativeLayout>
