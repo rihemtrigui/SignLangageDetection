@@ -41,8 +41,10 @@ dependencies {
     implementation "androidx.camera:camera-view:1.0.0-alpha30"
     implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly' // Use the latest version
     implementation 'org.tensorflow:tensorflow-lite-support:0.0.0-nightly'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.28'
     implementation libs.appcompat
     implementation libs.material
+
     implementation libs.activity
     implementation libs.constraintlayout
     implementation libs.tensorflow.lite.support

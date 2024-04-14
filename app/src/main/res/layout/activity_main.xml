@@ -21,12 +21,21 @@
         android:layout_below="@id/buttonx1"
         android:layout_centerHorizontal="true"/>
 
+
     <Button
         android:id="@+id/buttonx3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Let's Learn"
         android:layout_below="@id/buttonx2"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:id="@+id/testing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:layout_below="@id/buttonx3"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera.any" android:required="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +18,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SignYourWay"
         tools:targetApi="31">
+        <activity
+            android:name=".HelloAlex"
+            android:exported="false" />
+        <activity
+            android:name=".HelloMia"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseAvatar"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomePage"
+            android:exported="false" />
         <activity
             android:name=".TextToSign"
             android:exported="false" />

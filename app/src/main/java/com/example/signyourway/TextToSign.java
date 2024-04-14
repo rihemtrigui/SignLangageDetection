@@ -13,9 +13,6 @@ import android.widget.VideoView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -36,34 +33,15 @@ public class TextToSign extends AppCompatActivity {
         videoView = findViewById(R.id.videoView2);
         textViewCharacter = findViewById(R.id.caractere);
 
-        // Initialize videoMapping with your video resources
-        videoMapping.put('a', R.raw.a);
-        videoMapping.put('b', R.raw.b);
-        videoMapping.put('c', R.raw.c);
-        videoMapping.put('d', R.raw.d);
-        videoMapping.put('e', R.raw.e);
-        videoMapping.put('f', R.raw.f);
-        videoMapping.put('g', R.raw.g);
-        videoMapping.put('h', R.raw.h);
-        videoMapping.put('i', R.raw.i);
-        videoMapping.put('j', R.raw.j);
-        videoMapping.put('k', R.raw.k);
-        videoMapping.put('l', R.raw.l);
-        videoMapping.put('m', R.raw.m);
-        videoMapping.put('n', R.raw.n);
-        videoMapping.put('o', R.raw.o);
-        videoMapping.put('p', R.raw.p);
-        videoMapping.put('q', R.raw.q);
-        videoMapping.put('r', R.raw.r);
-        videoMapping.put('s', R.raw.s);
-        videoMapping.put('t', R.raw.t);
-        videoMapping.put('u', R.raw.u);
-        videoMapping.put('v', R.raw.v);
-        videoMapping.put('w', R.raw.w);
-        videoMapping.put('x', R.raw.x);
-        videoMapping.put('y', R.raw.y);
-        videoMapping.put('z', R.raw.z);
-
+        // Retrieve the selected avatar from the intent extras
+        String avatar = getIntent().getStringExtra("avatar");
+        if (avatar != null && avatar.equals("Mia")) {
+            // If the selected avatar is Mia, initialize the videoMapping for Mia
+            initializeMiaVideoMapping();
+        } else {
+            // Otherwise, initialize the videoMapping for Alex (or default to Alex)
+            initializeAlexVideoMapping();
+        }
 
         EditText editTextInput = findViewById(R.id.input);
         Button buttonSubmit = findViewById(R.id.button3);
@@ -91,7 +69,6 @@ public class TextToSign extends AppCompatActivity {
                 });
             }
         });
-
     }
 
     private void playSignLanguageVideos(String text) {
@@ -100,16 +77,11 @@ public class TextToSign extends AppCompatActivity {
         previousChar = '\0'; // Reset the previous character
         textViewCharacter.setText(""); // Clear the TextView
 
-        //MediaController mediaController = new MediaController(this);
-        //mediaController.setAnchorView(videoView);
-        //videoView.setMediaController(mediaController);
-
         char[] chars = text.toCharArray();
         if (chars.length > 0) {
             playNextVideo(chars, videoView);
         }
     }
-
 
     private void playNextVideo(char[] chars, VideoView videoView) {
         if (currentVideoIndex < chars.length) {
@@ -157,7 +129,48 @@ public class TextToSign extends AppCompatActivity {
         }
     }
 
+    private void initializeAlexVideoMapping() {
+        // Initialize videoMapping for Alex
+        videoMapping.put('a', R.raw.alex_a);
+        videoMapping.put('b', R.raw.alex_b);
+        videoMapping.put('c', R.raw.alex_c);
+        videoMapping.put('d', R.raw.alex_d);
+        videoMapping.put('e', R.raw.alex_e);
+        videoMapping.put('f', R.raw.alex_f);
+        videoMapping.put('g', R.raw.alex_g);
+        videoMapping.put('h', R.raw.alex_h);
 
 
+        // Add other mappings for Alex...
+    }
 
+    private void initializeMiaVideoMapping() {
+        // Initialize videoMapping with your video resources
+        videoMapping.put('a', R.raw.a);
+        videoMapping.put('b', R.raw.b);
+        videoMapping.put('c', R.raw.c);
+        videoMapping.put('d', R.raw.d);
+        videoMapping.put('e', R.raw.e);
+        videoMapping.put('f', R.raw.f);
+        videoMapping.put('g', R.raw.g);
+        videoMapping.put('h', R.raw.h);
+        videoMapping.put('i', R.raw.i);
+        videoMapping.put('j', R.raw.j);
+        videoMapping.put('k', R.raw.k);
+        videoMapping.put('l', R.raw.l);
+        videoMapping.put('m', R.raw.m);
+        videoMapping.put('n', R.raw.n);
+        videoMapping.put('o', R.raw.o);
+        videoMapping.put('p', R.raw.p);
+        videoMapping.put('q', R.raw.q);
+        videoMapping.put('r', R.raw.r);
+        videoMapping.put('s', R.raw.s);
+        videoMapping.put('t', R.raw.t);
+        videoMapping.put('u', R.raw.u);
+        videoMapping.put('v', R.raw.v);
+        videoMapping.put('w', R.raw.w);
+        videoMapping.put('x', R.raw.x);
+        videoMapping.put('y', R.raw.y);
+        videoMapping.put('z', R.raw.z);
+    }
 }

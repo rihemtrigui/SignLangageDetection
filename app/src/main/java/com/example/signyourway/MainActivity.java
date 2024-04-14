@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button moveToText;
     private Button moveToSign;
     private Button moveToLearn;
+    private Button test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,22 +25,7 @@ public class MainActivity extends AppCompatActivity {
         moveToText = findViewById(R.id.buttonx2);
         moveToSign = findViewById(R.id.buttonx1);
         moveToLearn = findViewById(R.id.buttonx3);
-
-        moveToSign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SignToText.class);
-                startActivity(intent); // Start the activity
-            }
-        });
-
-        moveToText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TextToSign.class);
-                startActivity(intent); // Start the activity
-            }
-        });
+        test = findViewById(R.id.testing);
 
         moveToLearn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,5 +34,42 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent); // Start the activity
             }
         });
+
+        moveToText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SignToText.class);
+                startActivity(intent); // Start the activity
+            }
+        });
+
+
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ChooseAvatar.class);
+                startActivity(intent); // Start the activity
+            }
+        });
+        String avatar = getIntent().getStringExtra("avatar");
+        if (avatar != null && avatar.equals("Mia")) {
+            moveToSign.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, TextToSign.class);
+                    intent.putExtra("avatar", "Mia");
+                    startActivity(intent);
+                }
+            });
+        } else {
+            moveToSign.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, TextToSign.class);
+                    intent.putExtra("avatar", "Alex");
+                    startActivity(intent);
+                }
+            });
+        }
     }
 }
