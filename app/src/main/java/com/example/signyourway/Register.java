@@ -71,6 +71,7 @@ DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference
                                 databaseReference.child("users").child(phoneTxt).child("password").setValue(passwordTxt);
 
                                 Toast.makeText(Register.this,"Registred Successfully !",Toast.LENGTH_SHORT).show();
+
                                 finish();
                             }}
                             @Override

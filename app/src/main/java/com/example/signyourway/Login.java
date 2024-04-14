@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
                                 final String getPassword = snapshot.child(phoneTxt).child("password").getValue(String.class);
                                 if (getPassword.equals(passwordTxt)) {
                                     Toast.makeText(Login.this, "Logged in Successfully !", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(Login.this, MainActivity.class));
+                                    startActivity(new Intent(Login.this, ChooseAvatar.class));
                                     finish();
 
                                 } else {

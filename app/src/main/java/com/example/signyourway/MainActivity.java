@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         moveToText = findViewById(R.id.buttonx2);
         moveToSign = findViewById(R.id.buttonx1);
         moveToLearn = findViewById(R.id.buttonx3);
-        test = findViewById(R.id.testing);
+
 
         moveToLearn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,13 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ChooseAvatar.class);
-                startActivity(intent); // Start the activity
-            }
-        });
+
         String avatar = getIntent().getStringExtra("avatar");
         if (avatar != null && avatar.equals("Mia")) {
             moveToSign.setOnClickListener(new View.OnClickListener() {
